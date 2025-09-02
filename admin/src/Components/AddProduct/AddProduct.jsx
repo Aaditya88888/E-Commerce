@@ -27,7 +27,7 @@ const AddProduct = () => {
     let formData = new FormData();
     formData.append("product", image);
 
-    await fetch(`${process.env.BACKEND_URL}/upload`, {
+    await fetch(`${import.meta.env.VITE_BACKEND_URL}/upload`, {
       method: "POST",
       headers: {
         Accept: "Application/json",
@@ -43,7 +43,7 @@ const AddProduct = () => {
       product.image = responseData.image_url;
       console.log(product);
 
-      await fetch(`${process.env.BACKEND_URL}/addproduct`, {
+      await fetch(`${import.meta.env.VITE_BACKEND_URL}/addproduct`, {
         method: "POST",
         headers: {
           Accept: "application/json",
